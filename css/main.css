@@ -257,7 +257,7 @@ h2 {
   background-color: #C34C39;
   background-image: url("../images/event-bg.jpg");
   background-position: 50% 0;
-  background-position: center left;
+  background-position: bottom left;
   background-size: contain;
   background-repeat:no-repeat;
   position: relative;
@@ -673,6 +673,7 @@ h2 {
   background-size:contain;
   background-repeat:no-repeat;  
   position: relative;
+  vertical-align:bottom;
 }
 
 .ear-piece {
@@ -692,7 +693,7 @@ h2 {
 
 #contact-section h3 {  
   margin-bottom: 0px;
-  vertical-align:bottom;
+ 
 }
 
 #contact address {
