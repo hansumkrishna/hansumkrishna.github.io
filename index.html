@@ -77,7 +77,16 @@ function insta()  {  window.open("https://www.instagram.com/TEDXBITBLR/");
 	                      <li class="scroll"><a href="#about"><b> About</b>  </a></li>                     
 	                   <!--   <li class="no-scroll"><a href="#twitter"><b> BLOG</b>  </a></li>-->
                           <li class="scroll"><a href="#tkt"><b> PURCHASE TICKETS</b>  </a></li>
-	                      <li class="scroll"><a href="#contact"><b> Contact</b>  </a></li>   
+	                      <li class="scroll"><a href="#contact"><b> Contact</b>  </a></li>
+                          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Social Media<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+<li><a onClick="insta()"><em class="fa fa-instagram"> <h4>Instagram</h4></em></a></li> 
+<li><a onClick="tw()"><em class="fa fa-twitter"></em></a><h4>Twitter</h4></li>
+<li><a onClick="fb()"><em class="fa fa-facebook"></em></a><h4>Facebook</h4></li>
+<li><a onClick="yt()"><em class="fa fa-youtube"></em></a><h4>Youtube</h4></li>
+          </ul>
+        </li>   
                             
 	                  </ul>
 	              </div>
@@ -475,10 +484,13 @@ We have previously organized, with the theme “I Believe” live presenter even
                             
                         <script type="text/javascript">
                             function init_map() {
+    
                                 var myOptions = {
-                                    zoom: 14,
+                                    zoom: 15,
                                     center: new google.maps.LatLng(12.9552, 77.5741),
-                                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                                    mapTypeId: google.maps.MapTypeId.ROADMAP,scrollwheel: false
+									
+								
                                 };
                                 map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
                                 marker = new google.maps.Marker({
