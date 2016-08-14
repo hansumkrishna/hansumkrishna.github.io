@@ -266,6 +266,10 @@ h2 {
   border:0;
  
 }
+.background-image img{
+        vertical-align:bottom;
+        border:0;
+        }
 
 .watch {
   position: absolute;
@@ -686,7 +690,7 @@ h2 {
 }
 
 #contact .container {
-  padding-top:47px;
+  padding-top:5px;
 }
 
 #contact h3 {
@@ -705,7 +709,7 @@ h2 {
 }
 
 .contact-text {
-  margin-bottom: 35px;
+  margin-bottom: 10px;
   display: block;
 }
 
