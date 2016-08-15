@@ -101,11 +101,11 @@ h2 {
 
 .navbar-brand {
   background-color: transparent;
-  height: 65px;
+  height: 50px;
   margin-bottom: 20px;
   position: relative;
   width: 297px;
-  opacity: .8
+  opacity: .7
 }
 
 .navbar-brand img {
@@ -117,7 +117,7 @@ h2 {
 .navbar-right {
   background-color: #ff8080;
   padding:0 0px 0 0;
-  opacity: .8
+  opacity: .7
 }
 
 .navbar-right li a {
@@ -194,8 +194,8 @@ position: relative;
   bottom: 14%;
   float: left;
   left: 0;
-  opacity: 0.8;
-  padding:10px 60px 35px;
+  opacity: 0.7;
+  padding:5px 10px 20px;
   right: inherit;
   text-transform: uppercase;
   color: #fff;
