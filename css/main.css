@@ -101,15 +101,14 @@ h2 {
 
 .navbar-brand {
   background-color: transparent;
-  height: 10px;
   margin-bottom: -20px;
-  position: relative;
-  width: 23%;
+  position: ABSOLUTE;
+  width: 15%;
   opacity: .6
 }
 
 .navbar-brand img {
-  position: relative;
+  position: ABSOLUTE;
   top:5px;
   left:5px;
 }
@@ -195,7 +194,7 @@ position: relative;
   float: left;
   left: 0;
   opacity: 0.5;
-  padding: 1% 1% 2%;
+  padding: .5% .5% 0%;
   right: inherit;
   color: #fff;
   text-align: left;
