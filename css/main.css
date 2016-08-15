@@ -101,10 +101,10 @@ h2 {
 
 .navbar-brand {
   background-color: transparent;
-  height: 50px;
-  margin-bottom: 20px;
+  height: 10px;
+  margin-bottom: -20px;
   position: relative;
-  width: 297px;
+  width: 23%;
   opacity: .7
 }
 
@@ -195,9 +195,8 @@ position: relative;
   float: left;
   left: 0;
   opacity: 0.7;
-  padding:5px 10px 20px;
+  padding: 1% 1% 2%;
   right: inherit;
-  text-transform: uppercase;
   color: #fff;
   text-align: left;
 }
