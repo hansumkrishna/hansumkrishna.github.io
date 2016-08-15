@@ -100,7 +100,7 @@ h2 {
 }
 
 .navbar-brand {
-  background-color: #ff8080;
+  background-color: transparent;
   height: 65px;
   margin-bottom: 20px;
   position: relative;
@@ -110,7 +110,8 @@ h2 {
 
 .navbar-brand img {
   position: relative;
-  top: 0px;
+  top:5px;
+  left:5px;
 }
 
 .navbar-right {
@@ -178,7 +179,8 @@ h2 {
 **************************/
 
 #home {
-  position: relative;
+ 
+position: relative;
   overflow: hidden;
 }
 
@@ -398,8 +400,7 @@ h2 {
 **************************/
 
 #event {
-  background-color: #33888F;
-  background-image: url("../images/performar-bg.jpg");
+  background-color: #47939A;
   background-position: 50% 0;
   background-size: contain;
   position: relative;
@@ -532,7 +533,7 @@ h2 {
 }
 
 #tkt {
-  background-color: #ecedef;
+  background-color: #FFB2B2;
   background-image: url("../images/tkt.jpg");
   background-position: center bottom;
   background-size: cover;
@@ -675,7 +676,7 @@ h2 {
 
 .contact-section {
   background-color: #f7ab24;
-  background-image: url("../images/contact-bg.jpg");
+
   background-position:50% 0;
   background-size:contain;
   background-repeat:no-repeat;  
@@ -686,8 +687,8 @@ h2 {
 
 .ear-piece {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 130px;
+  top: -20px;
 }
 
 #contact .container {
@@ -760,7 +761,7 @@ h2 {
 
 #footer {
   background-color: #212121;
-  background-image: url("../images/footer-bg.jpg");
+ 
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
