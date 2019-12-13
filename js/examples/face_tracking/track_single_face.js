@@ -21,6 +21,11 @@
 
 		
 		for(var i = 0; i < faces.length; i++) {
+			
+			if(getCookie("first_run")==1){
+				blink("L");
+				document.cookie="first_run=0";
+			}
 
 			var face = faces[i];
 
@@ -147,7 +152,7 @@
 				
 				storeFaceShapeVertices(v);
 				
-				if(sh!=window.outerHeight || sw!=window.outerWidth || document.getElementById("innerView")!=prevhtml){
+				if(sh!=window.outerHeight || sw!=window.outerWidth || document.getElementById(getCookie("innerviewvar"))!=prevhtml){
 					var sh=window.outerHeight;
 					var sw=window.outerWidth;
 					
@@ -158,6 +163,9 @@
 				if(timeout_blink(0)>3200){
 					document.activeElement.blur();
 				}
+				
+					prevhtml=document.getElementById(getCookie("innerviewvar"));
+					elementsView=document.getElementById(getCookie("innerviewvar")).querySelectorAll(".clickable");
 				
 				
 			}
@@ -178,11 +186,11 @@
 	var xxx=0;
 	var yyy=0;
 	var blinked_eye=null;
-	var prevhtml=document.getElementById("innerView");
-	var elementsView=document.getElementById("innerView").querySelectorAll(".clickable");
+	var prevhtml=document.getElementById(getCookie("innerviewvar"));
+	var elementsView=document.getElementById(getCookie("innerviewvar")).querySelectorAll(".clickable");
 	var currentTime = new Date().getTime();
 	var click_error=0;
-	var flicker_correct=8;
+	var flicker_correct=10;
 	var nose_length_a=40;
 	var nose_length_b=100;
 	var nose_factor_a=4;
@@ -205,7 +213,7 @@
 	}
 	
 	function recallhtml(){
-		elementsView = document.getElementById("innerView").querySelectorAll(".clickable");
+		elementsView = document.getElementById(getCookie("innerviewvar")).querySelectorAll(".clickable");
 		prevhtml=document.innerHTML;
 	}
 	
@@ -213,8 +221,8 @@
 		recallhtml();
 		var arrayLength = elementsView.length;
 		
-		var h_ratio=document.getElementById("innerView").offsetHeight/sh;
-		var w_ratio=document.getElementById("innerView").offsetWidth/sw;
+		var h_ratio=document.getElementById(getCookie("innerviewvar")).offsetHeight/sh;
+		var w_ratio=document.getElementById(getCookie("innerviewvar")).offsetWidth/sw;
 		
 		for (var i = 0; i < arrayLength; i++) {
 			var rect = elementsView[i].getBoundingClientRect();
@@ -222,8 +230,7 @@
 			//var btm=rect.top+(elementsView[i].offsetHeight/h_ratio);
 			//var rgt=rect.left+(elementsView[i].offsetWidth/w_ratio);
 			
-			//console.log(rect.left, rect.top, btm, rgt);
-			
+
 			if((rect.top/h_ratio)+click_error<y && (rect.bottom/h_ratio)-click_error>y && (rect.left/w_ratio)+click_error<x && (rect.right/w_ratio)-click_error>x){
 				console.log(elementsView[i]);
 				elementsView[i].click();
@@ -413,6 +420,22 @@ function extend(destination, source) {
 var eventMatchers = {
     'HTMLEvents': /^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,
     'MouseEvents': /^(?:click|dblclick|mouse(?:down|up|over|move|out))$/
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }
 
 var defaultOptions = {

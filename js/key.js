@@ -2,7 +2,84 @@ var lastUpdate = {
   counter: -1
 };
 var num_on=0;
+var cur_inp;
+document.cookie="innerviewvar=innerView";	
+//document.cookie="ben=Alex,Christos";		
+document.cookie="acc_typ=Savings,Current";
+document.cookie="money=18000";
 
+var benc=0;
+var accc=0;		
+
+function add_ben(vall){
+	var ben=getCookie("ben");
+	var newb=ben+","+val;
+	document.cookie="ben="+newb;
+	}
+	
+	
+function change_sel_ben(id){
+	cur_inp=document.getElementById(id);
+	var ben=getCookie("ben");
+	var benArr = ben.split(',');
+	if(benc>benArr.length-1){benc=0;}
+	cur_inp.value=benArr[benc++];
+	}
+	
+function change_sel_acc(id){
+	cur_inp=document.getElementById(id);
+	var ben=getCookie("acc_typ");
+	var benArr = ben.split(',');
+	if(accc>benArr.length-1){accc=0;}
+	cur_inp.value=benArr[accc++];
+	}
+	
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+	
+function typeo(id,num){
+	cur_inp=document.getElementById(id);
+	document.getElementById("innerView").style.display="none";
+	document.getElementById("innerView2").style.display="block";
+	document.cookie="innerviewvar=innerView2";
+	document.getElementById('result').value=null;
+	num_change(num);
+	}
+function enter(){
+	cur_inp.value=document.getElementById('result').value;
+	document.getElementById("innerView2").style.display="none";
+	document.getElementById("innerView").style.display="block";
+	document.cookie="innerviewvar=innerView";
+	}
+	
+function press_ok(){
+	document.getElementById('usrf').innerHTML=document.getElementById('usr').value;
+	document.getElementById('accf').innerHTML=document.getElementById('acc').value;
+	document.getElementById('srtf').innerHTML=document.getElementById('srt').value;
+	document.getElementById('memf').innerHTML=document.getElementById('mem').value;
+	document.getElementById('innerView').style.display='none';
+	document.getElementById('innerView2').style.display='none';
+	document.getElementById('confirm_page').style.display='block';
+}
+
+function confirm_xhttp(){
+	
+	window.location.href="acc_created.html";
+}
+		
 $(document).ready(function() {
   var longPress = {};
   var resultArea = $("#result");
@@ -14,7 +91,8 @@ $(document).ready(function() {
 	
 })
 
-function num_change(){
+function num_change(num){
+	if(num)num_on=num;
 	if(num_on==0){
 		num_on=1;
 		document.getElementById("num").innerHTML="ABC/abc";

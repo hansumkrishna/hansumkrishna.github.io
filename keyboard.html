@@ -18,7 +18,13 @@
 	<link href="css/key.css" rel="stylesheet">
 
 	<script>
+		alert("Please allow camera access to this WebApp and wait for the red pointer to appear on the screen while look straight into the front camera. Once the pointer appears, use your face to control the pointer. You may reload the page to read the instructions again.\n\n1.Left-eye Blink - Recalibrate face & pointer\n2.Both-eye Blink - Click\n3.Use the T9 Keypad to type only with your head and eyes")
 		window.onload = brfv4Example.start; 
+		
+setTimeout(function() { 
+document.cookie="first_run=1";
+}, 3000);
+		
 	</script>
 	
 </head>
@@ -68,7 +74,7 @@
       <input type="text" class="clickable" id="result" />
     </td>
 	<td colspan="1">
-	<button  style="width:34vw;height:30vh;"  onclick="xval=document.getElementById('result');xval.value=xval.value.substring(0, xval.value.length - 1);" class="clickable border-radius--grow" ><<<</button>
+	<button  style="width:32vw;height:30vh;"  onclick="xval=document.getElementById('result');xval.value=xval.value.substring(0, xval.value.length - 1);" class="clickable border-radius--grow" ><<<</button>
 	</td>
   </tr>
   <tr>
@@ -144,6 +150,7 @@
 	  <td>
 	  <button id="num" onclick="num_change();" class="clickable" >1-9/a-z</button>
 	  </td>
+	  </tr>
 </table>
 </div>
 
