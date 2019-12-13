@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="css/brfv4_examples_theme.css">
+	<title>Beyond Reality Face - BRFv4 - HTML5/Javascript face tracking</title>
+	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/libs/createjs/preloadjs.min.js"></script>
+	<script src="js/BRFv4Demo.js"></script>
+	
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	
+	<script src="js/key.js"></script>
+	<link href="css/key.css" rel="stylesheet">
+
+	<script>
+		window.onload = brfv4Example.start; 
+	</script>
+	
+</head>
+
+<body>
+
+<div id="_wrapper">
+
+
+<canvas id="canvas" style="z-index:1000000; position:absolute;" ></canvas>
+
+
+
+
+
+<div style="display:none;">
+	<div id="_content" >
+		<video  id="_webcam" playsinline></video>
+		<canvas id="_imageData"></canvas>
+		<canvas id="_faceSub"></canvas>
+		<canvas id="_t3d"></canvas>
+		<canvas id="_f3d"></canvas>
+		<canvas id="_drawing"></canvas>
+		</div>
+		</div>
+
+	<div style="display:none;"><div id="_subline"></div></div>
+
+    
+	<!-- <button onclick="calb();">cal b</button> -->
+	<!-- <button onclick="calc();">cal c</button> -->
+	<!-- <button onclick="cald();">cal d</button> -->
+	
+	<div style="display:none;"><div id="_highlight"><pre><code class="javascript" id="_gist"></code></pre></div></div>
+	
+
+
+
+<div style="display:none;"><div id="_settingsRight"></div></div>
+</div>
+</body>
+
+<div style="margin-left:10px;display:block;width:100%;height:100%;" id="innerView">
+<table width="100%" height="100%" id="phone">
+  <tr>
+    <td colspan="2">
+      <input type="text" class="clickable" id="result" />
+    </td>
+	<td colspan="1">
+	<button  style="width:34vw;height:30vh;"  onclick="xval=document.getElementById('result');xval.value=xval.value.substring(0, xval.value.length - 1);" class="clickable border-radius--grow" ><<<</button>
+	</td>
+  </tr>
+  <tr>
+    <td>
+      <button data-value="1" class="key clickable border-radius--grow">
+        <span id="b1" >. , !</span>
+      </button>
+    </td>
+    <td>
+      <button data-value="2" class="key clickable border-radius--grow">
+        <span id="b2" >a b c</span>
+      </button>
+    </td>
+    <td>
+      <button data-value="3" class="key clickable border-radius--grow">
+        <span id="b3" >d e f</span>
+      </button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button data-value="4" class="key clickable border-radius--grow">
+        <span id="b4" >g h i</span>
+      </button>
+    </td>
+    <td>
+      <button data-value="5" class="key clickable border-radius--grow">
+        <span id="b5" >j k l</span>
+      </button>
+    </td>
+    <td>
+      <button data-value="6" class="key clickable border-radius--grow">
+        <span id="b6" >m n o</span>
+      </button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button data-value="7" class="key clickable border-radius--grow">
+        <span id="b7" >p q r s</span>
+      </button>
+    </td>
+    <td>
+      <button data-value="8" class="key clickable border-radius--grow">
+        <span id="b8" >t u v</span>
+      </button>
+    </td>
+    <td>
+      <button data-value="9" class="key clickable border-radius--grow">
+        <span id="b9" >w x y z</span>
+      </button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button data-value="*" class="key clickable border-radius--grow">*</button>
+    </td>
+    <td>
+      <button data-value="0" class="key clickable border-radius--grow">0</button>
+    </td>
+    <td>
+      <button data-value="#" class="key clickable border-radius--grow">#</button>
+	  
+    </td>
+  </tr>
+  <tr>
+  <td>
+  <button onclick="document.getElementById('result').value=null;" class="clickable" >Clear</button>
+  </td>
+  <td>
+	  <button onclick="xval=document.getElementById('result');xval.value=xval.value.substring(0, xval.value.length - 1);" class="clickable" ><<<</button>
+	  </td>
+	  <td>
+	  <button id="num" onclick="num_change();" class="clickable" >1-9/a-z</button>
+	  </td>
+</table>
+</div>
+
+                         
+                        
+
+</html>
